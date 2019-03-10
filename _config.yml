@@ -1,3 +1,15 @@
 name: Daniel, Bumblebee
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+email: xnguyenthe@stuba.sk
+author: Bao Dat Nguyen The
+github: https://github.com/xnguyenthe
+gems:
+- jekyll-email-protect
+- jekyll-youtube
+
+defaults:
+  - scope:
+      path: "assets/img/self"
+    values:
+      selfimage: true

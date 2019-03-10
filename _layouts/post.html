@@ -1,13 +1,16 @@
 ---
-layout: default
+layout: default_wrapper
 ---
 
 <!--This is a template that will be inserted inside the default layout
 (see the "layout: dafault" in the front matter) replacing {{ content }}
 -->
-<h1>{{ page.title }}</h1>
-<p class="meta">{{ page.date | date_to_string }}</p>
 
-<div class="post">
+<h1>{{ page.title }}</h1>
+<p class="meta">{{ page.date | date_to_string }}, {{ site.author }}</p>
+
+<section class="post">
+
   {{ content }}
-</div>
+
+</section>

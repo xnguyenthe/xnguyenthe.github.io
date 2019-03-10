@@ -1,0 +1,20 @@
+---
+layout: default_wrapper
+---
+
+<article class="aboutme">
+
+  {{ content }}
+</article>
+
+<section>
+
+{% for file in site.static_files %}
+  {% if file.selfimage %}
+    <img src="{{ file.path }}" alt="{{ file.name }}"/>
+  {% endif %}
+{% endfor %}
+
+<p>Recent sightings of me... :D</p>
+
+</section>

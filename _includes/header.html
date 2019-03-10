@@ -1,0 +1,12 @@
+<header>
+  <nav>
+      <ul>
+          <li><a href="/" {% if page.url == '/' %} style="color: tomato" {% endif %}>Home</a></li>
+          <li><a href="/about" {% if page.url == '/about/' %} style="color: tomato" {% endif %}>About</a></li>
+          <li><a href="/cv" {% if page.url == '/cv/' %}style="color: tomato" {% endif %}>CV</a></li>
+          <li><a href="/hobby" {% if page.url == '/hobby/' %} style="color: tomato" {% endif %}>Hobbies</a></li>
+          <li><a href="/dokumentacia" {% if page.url == '/dokumentacia/' %} style="color: tomato" {% endif %}>Documentation</a></li>
+          <li><a href="/blog" {% if page.url == '/blog/' %} style="color: tomato" {% endif %}>Blog</a></li>
+      </ul>
+  </nav>
+</header>

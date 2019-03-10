@@ -1,0 +1,68 @@
+---
+layout: default_wrapper
+title: My Hobbies
+---
+
+<h2> {{ page.title }}</h2>
+
+<p>
+Read along to uncover my brutally mundane life...
+</p>
+
+<ul>
+  <li><a href="#piano-hobby">Piano playing</a></li>
+  <li><a href="#reading-hobby">Reading books</a></li>
+  <li><a href="#youtube-hobby">YouTube stuff</a></li>
+</ul>
+
+<section id="piano-hobby">
+
+  <h3>Piano playing</h3>
+
+  <p>Playing the piano is among my favourite activities to, as they say in German, "chase away
+    the time" with. I've been playing the, to the eye rather ordinary looking, instrument of piano
+    since the dawning years of my life. Did that sound too pretentious? I mean since around 4 :)
+    My preferred musical movement is Impressionism, within which
+    I find myself most inclined to Mr. Claude Debussy and his dreamy, light and liberating style.
+  </p>
+
+  <p>Please find below a list of pieces that I attempt to play, and/or aspire to learn. </p>
+
+  <!--insert a list from a data structure or smth-->
+  {% assign pieces = site.data.piano_pieces | sort: 'author' %}
+  {% for piece in pieces %}
+   <li>{{ piece.name }}, {{ piece.author }}, {{ piece.movement }} </li>
+  {% endfor %}
+
+  <p>Below is a YouTube video with a piano mashup of the most famous and recongnizable pieces
+  of classical music in history. Classical music isn't just boring ^^
+  </p>
+
+  {% youtube "https://www.youtube.com/watch?v=7OYkWSW7u4k" %}
+
+</section> <!--end of piano-hobby -->
+
+<section id="reading-hobby">
+
+  <h3>Reading Books</h3>
+
+  <p>Reading books is an activity I don't indulge in often these days, contrary to my rational wish
+    that I did. When I do eventually decide to read books, they tend to be categorizable in the fantasy
+    genre. Below are the most prominent examples of the books or book series I've read and cherish.
+  </p>
+
+  <!--insert a list of books -->
+  {% for book in site.data.books %}
+    <ul>
+      <li>{{ book.name }}, {{ book.author }}
+          <ul>
+            {% for item in book.booklist %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+      </li>
+    </ul>
+
+  {% endfor %}
+
+</section> <!--end of reading-hobby -->

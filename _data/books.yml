@@ -1,0 +1,38 @@
+- name: Harry Potter series
+  author: J.K. Rowling
+  booklist:
+    - Harry Potter and the Philosopher's Stone
+    - Harry Potter and the Chamber of Secrets
+    - Harry Potter and the Prisoner of Azkaban
+    - Harry Potter and the Goblet of Fire
+    - Harry Potter and the Order of Phoenix
+    - Harry Potter and the Half blood Prince
+    - Harry Potter and the Deathly Hallows
+
+- name: Lord of the Rings
+  author: J.R.R. Tolkien
+  booklist:
+    - The Fellowship of the Rings
+    - The Two Towers
+    - The King Returns
+
+- name: The Chronicles of Narnia
+  author: C.S. Lewis
+  booklist:
+    - The Magicians's Nephew
+
+- name: The Inheritance Cycle
+  author: Christopher Paolini
+  booklist:
+    - Eragon
+    - Eldest
+    - Brisingr
+    - Inheritance
+
+- name: Percy Jackson series
+  author: Rick Riordan
+  booklist:
+
+
+- name: Hunger Games
+  author: Susan Collins
