@@ -3,9 +3,9 @@ layout: default_wrapper
 ---
 <nav>
     <ul>
-        <li><a href="/dokumentacia">Zadanie 1</a></li>
-        <li><a href="/dokumentacia/zadanie2">Zadanie 2</a></li>
-        <li><a href="/dokumentacia/zadanie3">Zadanie 3</a></li>
+        <li><a href="/dokumentacia" {% if page.url == '/dokumentacia/'  %} style="color: tomato" {% endif %}>Zadanie 1</a></li>
+        <li><a href="/dokumentacia/zadanie2" {% if page.url == '/dokumentacia/zadanie2'  %} style="color: tomato" {% endif %}>Zadanie 2</a></li>
+        <li><a href="/dokumentacia/zadanie3" {% if page.url == '/dokumentacia/zadanie3'  %} style="color: tomato" {% endif %}>Zadanie 3</a></li>
     </ul>
 </nav>
 
