@@ -6,24 +6,24 @@ title: Curriculum Vitae
 <h2>{{ page.title }}</h2>
 
 <ul>
-  <li><a href="#">contact details</a></li>
-  <li><a href="#">technical skills</a></li>
-  <li><a href="#">other skills</a></li>
-  <li><a href="#">education</a></li>
+  <li><a href="#cv-contact">contact details</a></li>
+  <li><a href="#cv-technical_skills">technical skills</a></li>
+  <li><a href="#cv-other_skills">other skills</a></li>
+  <li><a href="#cv-education">education</a></li>
 </ul>
 
-<h3><a href="#">Contact Details</a></h3>
+<h3 id="cv-contact">Contact Details</h3>
 
 Name: Bao Dat Nguyen The <br>
 E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-<h3><a href="#">Technical Skills</a></h3>
+<h3 id="cv-technical_skills">Technical Skills</h3>
 
 {% for skill in site.data.program_skills %}
   {{ skill.skill }} - {{ skill.level }} <br>
 {% endfor %}
 
-<h3><a href="#">Other Skills</a></h3>
+<h3 id="cv-other_skills">Other Skills</h3>
   <table>
     <tr>
       <th>Language</th>
@@ -32,20 +32,20 @@ E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     {% for lang in site.data.language_skills %}
     <tr>
       <td>{{ lang.language }}</td>
-      <td>{{ lang.level  }}</td>
+      <td style="background-color: {{ lang.color }};"> {{ lang.level  }}</td>
     </tr>
     {% endfor %}
   </table>
 
-<h3><a href="#">Formal Education</a></h3>
+<h3 id ="cv-education" >Formal Education</h3>
   <ul>
     <li>Elementary School Osloboditeľská 1, Bratislava</li>
     <li>Grammar School Grosslingová 18, Bratislava</li>
     <li>Slovak University of Technology, Faculty of Informatics</li>
   </ul>
 
-<h3><a href="#">Work Experience</a></h3>
+<h3 id="cv-work_xp">Work Experience</h3>
 
 <ul>
-<li>cashier</li>  
+<li>cashier</li>
 </ul>

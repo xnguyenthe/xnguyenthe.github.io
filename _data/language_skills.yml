@@ -1,10 +1,15 @@
 - language: Slovak
   level: fluent (mother tongue)
+  color: Green
 - language: English
   level: C1 (CAE certificate 2015)
+  color: YellowGreen
 - language: German
   level: B2
+  color: Red
 - language: Vietnamese
   level: intermediate
+  color: Red
 - language: Japanese
-  level: Beginner
+  level: beginner
+  color:
