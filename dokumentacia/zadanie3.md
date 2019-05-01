@@ -26,8 +26,8 @@ Hodnotenie (max 14 bodov):
 ## Riešenie ##
 
 ### DTD definícia dokumentu ###
-
-`<!DOCTYPE presentation [
+```
+<!DOCTYPE presentation [
 <!ELEMENT presentation (slide*)>
 <!ELEMENT slide (layout_title | layout_content1 | layout_content2)>
 <!ELEMENT layout_title (title, subtitle?, author?)>
@@ -48,7 +48,8 @@ Hodnotenie (max 14 bodov):
 <!ELEMENT link (#PCDATA)>
 <!ATTLIST link src CDATA #IMPLIED>
 <!ELEMENT layout_content2 (title, text_field, figure )>
-]>`
+]>
+```
 
 #### Účel navrhnutých elementov ####
 * presentation
