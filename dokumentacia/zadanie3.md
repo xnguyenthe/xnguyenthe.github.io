@@ -25,6 +25,13 @@ Hodnotenie (max 14 bodov):
 
 ## Riešenie ##
 
+### Vypracované dokumenty ###
+* _prezentacia.xml_ - XML súbor s ukážkovou prezentáciou
+* _prezentacia_xslt.xsl_ - definovanie transformácií z XML do xhtml
+* _parametrexhtml.xml_ - definovanie parametrov
+* _styles.css_ - definovanie CSS štýlov pre html dokumenty
+- medzi dokumentami sú aj obrázky, ktoré boli použité v prezentácii
+
 ### DTD definícia dokumentu ###
 ```
 <!DOCTYPE presentation [
