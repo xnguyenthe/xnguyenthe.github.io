@@ -95,12 +95,15 @@ Hodnotenie (max 14 bodov):
 
 #### parametre ####
 
-`<xsl:param name="slide.width" select="1200"/>
-<xsl:param name="slide.height" select="500"/>`
+```
+<xsl:param name="slide.width" select="1200"/>
+<xsl:param name="slide.height" select="500"/>
+```
 
 #### transformácie ####
 
-`<xsl:template match="//slide">
+```
+<xsl:template match="//slide">
 <xsl:template match="//layout_title">
 <xsl:template match="//layout_content1">
 <xsl:template match="//layout_content2">
@@ -109,7 +112,7 @@ Hodnotenie (max 14 bodov):
 <xsl:template match="//list">
 <xsl:template match="//emphasis[@type]">
 <xsl:template match="//link">
-`
+```
 
 ### XML -> XHTML ###
 Použitie druhej verzie XSL
@@ -117,13 +120,16 @@ Použitie druhej verzie XSL
 
 Referencia na súbor s paramatrami
 
-`<!--import parametrov-->
-<xsl:include href="parametrexhtml.xml"/>`
+```
+<!--import parametrov-->
+<xsl:include href="parametrexhtml.xml"/>
+```
 
 Predpis pre transformáciu jednotlivých slajdov a ich generovanie do oddelených súborov HTML.
 Použitie parametrov definovaných v oddelenom súbore.
-`<!-- template for generating each slide onto a separate page -->
-  <xsl:template match="//slide">
+```
+<!-- template for generating each slide onto a separate page -->
+<xsl:template match="//slide">
     <xsl:result-document href="xhtml/s_{count(preceding-sibling::slide)}.html" method="xhtml">
 
       <html xmlns="http://www.w3.org/1999/xhtml">
@@ -143,24 +149,28 @@ Použitie parametrov definovaných v oddelenom súbore.
 
       </html>
     </xsl:result-document>
-  </xsl:template>`
+</xsl:template>
+```
 
-  Vytvorenie navigácie pre prepojenie jednotlivých html súborov. Tento template je volaný vyššie.
-  `<!--template for creation of Navigation-->
-  <xsl:template name="navigation">
-        <xsl:if test="count(preceding-sibling::slide) &gt; 0">
-          <a href="s_{count(preceding-sibling::slide) - 1}.html">Back</a>
-        </xsl:if>
+Vytvorenie navigácie pre prepojenie jednotlivých html súborov. Tento template je volaný vyššie.
+```
+<!--template for creation of Navigation-->
+<xsl:template name="navigation">
+      <xsl:if test="count(preceding-sibling::slide) &gt; 0">
+        <a href="s_{count(preceding-sibling::slide) - 1}.html">Back</a>
+      </xsl:if>
 
-        - <xsl:value-of select="count(preceding-sibling::slide)"/> -
+      - <xsl:value-of select="count(preceding-sibling::slide)"/> -
 
-        <xsl:if test="count(following-sibling::slide) &gt; 0">
-          <a href="s_{count(preceding-sibling::slide) + 1}.html">Next</a>
-        </xsl:if>
-  </xsl:template>`
+      <xsl:if test="count(following-sibling::slide) &gt; 0">
+        <a href="s_{count(preceding-sibling::slide) + 1}.html">Next</a>
+      </xsl:if>
+</xsl:template>
+```
 
-  Transformácia pre titulný slajd:
-  `<!-- title_slide -->
+Transformácia pre titulný slajd:
+```
+<!-- title_slide -->
 <xsl:template match="//layout_title">
   <!--ak parent (slide) je prvy slide, dajme mu section attribute title_slide-->
   <section class="title_slide">
@@ -181,10 +191,12 @@ Použitie parametrov definovaných v oddelenom súbore.
       </section>
 
   </section>
-</xsl:template>`
+</xsl:template>
+```
 
 Transformácia pre zoznam. Umožňuje vnáranie.
-`<!--template for list - allows nesting -->
+```
+<!--template for list - allows nesting -->
 <xsl:template match="//list">
   <xsl:choose>
     <xsl:when test="self::list/@type = 'ordered' ">
@@ -202,10 +214,12 @@ Transformácia pre zoznam. Umožňuje vnáranie.
       </ul>
     </xsl:otherwise>
   </xsl:choose>
-</xsl:template>`
+</xsl:template>
+```
 
 Transformácia pre zvýraznený text. Tiež umožňuje vnáranie, teda použitie viacerých typov zvýraznení naraz.
-`<!-- template for emphasis - allows nested emphasises as well -->
+```
+<!-- template for emphasis - allows nested emphasises as well -->
     <!--without attribute => default value is type="italic" -->
   <xsl:template match="//emphasis[@type]">
     <xsl:choose>
@@ -219,7 +233,8 @@ Transformácia pre zvýraznený text. Tiež umožňuje vnáranie, teda použitie
         <i><xsl:apply-templates /></i>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>`
+  </xsl:template>
+  ```
 
 Transformácie sa robili pomocou programu _Saxon_. Použili sme verziu 9. Príkaz pre transformáciu vyzeral nasledovne:
 `java -jar C:\DocBook\saxon\saxon9he.jar prezentacia.xml prezentacia_xslt.xsl`
